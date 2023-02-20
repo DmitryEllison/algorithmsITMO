@@ -1,13 +1,4 @@
-#include <cstdio>
-
-#define QUEUE_MAX_SIZE 1024
-typedef int T;
-
-
-typedef struct QUEUE_T {
-    T data[QUEUE_MAX_SIZE];
-    size_t size;
-} queue_t;
+#include "utils.h"
 
 bool is_empty(queue_t* queue) {
     return queue->size == 0;
