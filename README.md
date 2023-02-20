@@ -1,4 +1,5 @@
 # Алгоритмы и Структуры Данных
+## ИТМО 4 семестр (2023 год) СУиР 
 
 - [Лекции Техносферы  VK](https://habr.com/en/company/vk/blog/316170/)
 - [Лекции по АиСД Бабичев С.Л.](https://drive.google.com/drive/folders/1viF8b4pGEm4mYNxwsRZmz4Gtd8wZfXEc)
