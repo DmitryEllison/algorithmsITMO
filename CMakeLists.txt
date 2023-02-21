@@ -3,4 +3,4 @@ project(algorithmsITMO)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(algorithmsITMO src/1005.cpp utils/queue.cpp main.cpp utils/utils.h)
+add_executable(algorithmsITMO src/1005.cpp)

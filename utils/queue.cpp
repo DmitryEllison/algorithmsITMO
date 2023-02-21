@@ -34,7 +34,7 @@ T pop(queue_t* queue) {
     size_t min_son_index;
 
     while (pos * 2 + 2 < size(queue)) {
-        // find min son
+        // find ma_min son
         min_son_index = queue->data[pos * 2 + 1] < queue->data[pos * 2 + 2] ?
                 pos * 2 + 1 : pos * 2 + 2;
         if (queue->data[pos] > queue->data[min_son_index]) {
