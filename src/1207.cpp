@@ -4,6 +4,8 @@
  */
 
 #include <iostream>
+#include <valarray>
+
 #define PI_2 1.5707963267948966
 
 struct Point {
@@ -17,10 +19,9 @@ void swap(Point* a, Point* b) {
 }
 
 double angle(Point* a, Point* b) {
-    // (b->y > a->y) предтикат всегда верный ибо base выбран как самый маленьким по y
-    if (b->x - a->x == 0) return (b->y > a->y) ? PI_2 : 3 * PI_2;
-    double result = (b->y - a->y) / (b->x - a->x);
-    return result;
+    if (b->x == a->x) return (b->y >= a->y) ? PI_2 : 3 * PI_2;
+    else if (b->y == a->y ) return 0;
+    return atan2((double )(b->y - a->y) , (double )(b->x - a->x));
 }
 
 double ma_comparator(Point* base, Point* a, Point* b) {
@@ -63,10 +64,11 @@ int main() {
     for (int i = 0; i < n; ++i) {
         std::cin >> points[i].x >> points[i].y;
         points[i].num = i;
-        if (points[i].y < points[base].y) base = i;
+        if (points[i].y < points[base].y ||
+        points[i].y == points[base].y && points[i].x < points[base].x) base = i;
     }
-
     swap(&points[0], &points[base]);
+
     quickSort(points, 1, n-1, ma_comparator);
 
     printf("%d %d", points[0].num + 1, points[n/2].num + 1);
