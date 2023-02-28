@@ -3,7 +3,6 @@
  * Решение не сколько на быстроту но на использование функций высшего поярдка
  */
 
-#include <cstddef>
 #include <iostream>
 #define PI_2 1.5707963267948966
 
@@ -36,11 +35,11 @@ double ma_comparator(Point* base, Point* a, Point* b) {
  * @param comparator - функция сравнения
  */
 void quickSort(Point* array,
-               size_t left,
-               size_t right,
+               int left,
+               int right,
                double (comparator)(Point*, Point*, Point*)) {
 
-    size_t i = left, j = right;
+    int i = left, j = right;
     Point pivot = array[(left + right)/2];
 
     while ( i <= j) {
@@ -55,13 +54,13 @@ void quickSort(Point* array,
     if (right > i) quickSort(array, i, right, comparator);
 }
 
-int ma_test() {
-    size_t n;
-    size_t base = 0;
+int main() {
+    int n;
+    int base = 0;
     std::cin >> n;
     Point points[n];
 
-    for (size_t i = 0; i < n; ++i) {
+    for (int i = 0; i < n; ++i) {
         std::cin >> points[i].x >> points[i].y;
         points[i].num = i;
         if (points[i].y < points[base].y) base = i;
@@ -71,8 +70,4 @@ int ma_test() {
     quickSort(points, 1, n-1, ma_comparator);
 
     printf("%d %d", points[0].num + 1, points[n/2].num + 1);
-}
-
-int main() {
-    return ma_test();
 }
