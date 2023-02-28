@@ -7,6 +7,8 @@ void ma_test() {
     while (count-- > 0) {
         std::cin >> n >> k;
         n_min = n/k * k;
-        std::cout << n/k * n_min * (k-1)/2 + (n - n_min) * (n - n_min - 1) / 2 + (n - n_min) * (n_min - n/k) << "\n";
+        std::cout << n/k * n_min * (k-1)/2 +
+        (n - n_min) * (n - n_min - 1) / 2 +
+        (n - n_min) * (n_min - n/k) << "\n";
     }
 }
